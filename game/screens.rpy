@@ -301,7 +301,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("GOOOO") action Start()
 
         else:
 
@@ -311,7 +311,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("FancySettings") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -321,7 +321,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("NotAbout") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -332,7 +332,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quiter") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -360,6 +360,7 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
+    
 
     ## This empty frame darkens the main menu.
     frame:
