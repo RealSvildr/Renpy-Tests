@@ -74,13 +74,11 @@ label DealerAI:
     "Dealer Cards\n[DealerHandStr]\nValue: [DealerValue]"
 
     while DealerValue <= 16:
-        
         call DealerBuyCard
 
     jump FinishGame
 
 label DealerBuyCard:
-    #if DealerValue <= 16:
     call GetCard
     $ DealerHand.append(CardsList[Rnd_Card])
     call CalcDealerHand
@@ -192,14 +190,15 @@ label CalcPlayerHand:
     return
 
 label GetCard:
-    $ Rnd_Card = renpy.random.randint(0, 51)
+    $ Rnd_Card = renpy.random.randint(0, len(CardsList) - 1)
 
     while Rnd_Card in CardsDealt:
-        $ Rnd_Card = renpy.random.randint(0, 51)
+        $ Rnd_Card = renpy.random.randint(0, len(CardsList) - 1)
 
     $ CardsDealt.append(Rnd_Card)
 
     return
+    
 label FinishGame:
     "Player: [PlayerValue]\nDealer: [DealerValue]"
 
