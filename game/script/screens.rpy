@@ -303,6 +303,8 @@ screen navigation():
 
             textbutton _("GOOOO") action Start()
 
+            textbutton _("BlackJack") action Start("Start_BlackJack")
+
         else:
 
             textbutton _("History") action ShowMenu("history")
