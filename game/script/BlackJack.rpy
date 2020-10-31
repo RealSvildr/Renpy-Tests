@@ -61,6 +61,12 @@ label Start_BlackJack:
     call MenuPlayer
 
 label MenuPlayer:
+    
+    "Your cards\n[PlayerHandStr]\nValue: [PlayerValue]"
+
+    if PlayerValue == 21:
+        "Player BlackJack"
+        jump MatchWon
 
     while True:
         menu:
